@@ -207,6 +207,17 @@
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9a5e2b2e3b.mp3?filename=happy-birthday-jazz-110874.mp3" type="audio/mpeg">
   </audio>
   <script>
+     const audio = new Audio("happy-birthday-322777.mp3"); // apna file
+    audio.loop = true; // repeat karte raho
+
+    document.body.addEventListener("click", async () => {
+      try {
+        await audio.play();
+        console.log("Music started ✅");
+      } catch (err) {
+        console.log("Play blocked ❌", err);
+      }
+    });
     const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
     const rand=(a,b)=>Math.random()*(b-a)+a, pick=arr=>arr[(Math.random()*arr.length)|0];
     (function particles(){
